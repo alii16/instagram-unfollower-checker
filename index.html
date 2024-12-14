@@ -1,105 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram Unfollowers Checker</title>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white mt-10 p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-4xl text-indigo-700 font-bold mb-4">Instagram Unfollowers Checker</h1>
-        <p class="text-sm text-gray-600 mb-6">Jika kamu belum memiliki file <strong>following</strong> dan <strong>followers</strong> dalam format CSV, kamu dapat mengunduhnya menggunakan extension Chrome berikut: <a href="https://chromewebstore.google.com/detail/insexport-alat-ekspor-pen/okmokimdgjhndamggnkdojhbofdmepno?hl=id" target="_blank" class="text-indigo-700 hover:underline">InstaExport</a>.</p>
-        <form id="form">
-            <label class="block mb-2 text-sm font-medium text-gray-900" for="followingFile">Upload File Following</label>
-            <input class="block w-full mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="followingFile" type="file" accept=".csv">
+      <h1 class="text-4xl text-indigo-700 font-bold mb-4">
+        Instagram Unfollowers Checker
+      </h1>
+      <p class="text-sm text-gray-600 mb-6">
+        Jika kamu belum memiliki file <strong>following</strong> dan
+        <strong>followers</strong>, kamu dapat mengikuti langkah-langkah pada halaman berikut:
+        <a
+          href="tutorial.html"
+          class="text-indigo-700 hover:underline"
+          >Tutorial</a
+        >.
+      </p>
+      <form id="form">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900"
+          for="followingFile"
+          >Upload File Following</label
+        >
+        <input
+          class="block w-full mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+          id="followingFile"
+          type="file"
+          accept=".csv,.json"
+        />
 
-            <label class="block mb-2 text-sm font-medium text-gray-900" for="followersFile">Upload File Followers</label>
-            <input class="block w-full mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="followersFile" type="file" accept=".csv">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900"
+          for="followersFile"
+          >Upload File Followers</label
+        >
+        <input
+          class="block w-full mb-4 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+          id="followersFile"
+          type="file"
+          accept=".csv,.json"
+        />
 
-            <button type="button" id="compareBtn" class="w-full text-white rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Bandingkan</button>
-        </form>
-        <div id="result" class="mt-4"></div>
-        <footer class="text-gray-900 py-4 mt-10 text-center border-t">
-            <p class="text-sm">Made with 💡 by <a href="https://alii.mra.my.id" class="text-indigo-700 hover:underline" target="_blank">Ali Polanunu</a></p>
-            <p class="text-xs">Instagram Unfollowers Checker &copy; 2024</p>
-        </footer>
+        <button
+          type="button"
+          id="compareBtn"
+          class="w-full text-white rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-700 font-medium text-sm px-5 py-2.5 text-center"
+        >
+          Bandingkan
+        </button>
+      </form>
+      <div id="result" class="mt-4"></div>
+      <footer class="text-gray-900 py-4 mt-10 text-center border-t">
+        <p class="text-sm">
+          Made with 💡 by
+          <a
+            href="https://alii.mra.my.id"
+            class="text-indigo-700 hover:underline"
+            target="_blank"
+            >Ali Polanunu</a
+          >
+        </p>
+        <p class="text-xs">Instagram Unfollowers Checker &copy; 2024</p>
+      </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
 
     <script>
-        document.getElementById('compareBtn').addEventListener('click', async () => {
-            const followingFile = document.getElementById('followingFile').files[0];
-            const followersFile = document.getElementById('followersFile').files[0];
+      document
+        .getElementById("compareBtn")
+        .addEventListener("click", async () => {
+          const followingFile =
+            document.getElementById("followingFile").files[0];
+          const followersFile =
+            document.getElementById("followersFile").files[0];
 
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '';
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = "";
 
-            if (!followingFile || !followersFile) {
-                resultDiv.innerHTML = '<p class="text-red-500">Kedua file harus diupload!</p>';
-                return;
-            }
+          if (!followingFile || !followersFile) {
+            resultDiv.innerHTML =
+              '<p class="text-red-500">Kedua file harus diupload!</p>';
+            return;
+          }
 
-            if (!followingFile.name.endsWith('.csv') || !followersFile.name.endsWith('.csv')) {
-                resultDiv.innerHTML = '<p class="text-red-500">Upload file yang valid dong!</p>';
-                return;
-            }
+          // Memastikan file yang diupload berformat JSON
+          if (
+            !followingFile.name.endsWith(".json") ||
+            !followersFile.name.endsWith(".json")
+          ) {
+            resultDiv.innerHTML =
+              '<p class="text-red-500">File yang diupload harus berupa file JSON (.json)!</p>';
+            return;
+          }
 
-            const readCSV = (file) => {
-                return new Promise((resolve, reject) => {
-                    Papa.parse(file, {
-                        header: true,
-                        skipEmptyLines: true,
-                        complete: (results) => resolve(results.data),
-                        error: (error) => reject(error),
-                    });
-                });
-            };
-
-            try {
-                const followingData = await readCSV(followingFile);
-                const followersData = await readCSV(followersFile);
-
-                const unique = (array) => [...new Set(array)];
-
-                const following = unique(followingData.map(user => user.username || user.Username));
-                const followers = unique(followersData.map(user => user.username || user.Username));
-
-                const notFollowingBack = following.filter(user => !followers.includes(user));
-
-                resultDiv.innerHTML = `
-                    <h2 class="text-lg font-bold mb-2">Nih daftar para seleb👇:</h2>
-                    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
-                        ${notFollowingBack.length > 0 
-                            ? notFollowingBack.map(username => `<div class="bg-pink-100 text-pink-700 px-2 py-1 rounded">${username}</div>`).join('') 
-                            : '<div class="col-span-2 text-center text-gray-500">Aman, kalian saling follow!</div>'
-                        }
-                    </div>
-                `;
-
-                if (notFollowingBack.length > 0) {
-                    const downloadBtn = document.createElement('button');
-                    downloadBtn.textContent = 'Download CSV';
-                    downloadBtn.className = 'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mt-4';
-                    downloadBtn.addEventListener('click', () => {
-                        const csvContent = Papa.unparse(notFollowingBack.map(user => ({ username: user })));
-                        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-                        const link = document.createElement('a');
-                        link.href = URL.createObjectURL(blob);
-                        link.download = 'not-following-back.csv';
-                        link.click();
-                    });
-                    resultDiv.appendChild(downloadBtn);
+          const readJSON = (file) => {
+            return new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                try {
+                  const parsedData = JSON.parse(reader.result);
+                  resolve(parsedData);
+                } catch (error) {
+                  reject("Error parsing JSON file");
                 }
+              };
+              reader.onerror = (error) => reject(error);
+              reader.readAsText(file);
+            });
+          };
 
-            } catch (error) {
-                resultDiv.innerHTML = '<p class="text-red-500">Error memproses file. Coba cek format filenya (file harus berupa .csv)</p>';
-                console.error(error);
+          const processFollowersFile = async (file) => {
+            const data = await readJSON(file);
+            if (Array.isArray(data)) {
+              // Mengambil value dari followers.json
+              return data.flatMap((item) => {
+                return item.string_list_data.map((entry) =>
+                  entry.value.toLowerCase()
+                );
+              });
+            } else {
+              throw new Error("Format followers.json tidak valid.");
             }
+          };
+
+          const processFollowingFile = async (file) => {
+            const data = await readJSON(file);
+            if (
+              data.relationships_following &&
+              Array.isArray(data.relationships_following)
+            ) {
+              // Mengambil value dari following.json
+              return data.relationships_following.flatMap((item) => {
+                return item.string_list_data.map((entry) =>
+                  entry.value.toLowerCase()
+                );
+              });
+            } else {
+              throw new Error("Format following.json tidak valid.");
+            }
+          };
+
+          try {
+            const following = await processFollowingFile(followingFile);
+            const followers = await processFollowersFile(followersFile);
+
+            const unique = (array) => Array.from(new Set(array));
+
+            const notFollowingBack = unique(following).filter(
+              (user) => !unique(followers).includes(user)
+            );
+
+            resultDiv.innerHTML = `
+              <h2 class="text-lg font-bold mb-2">Nih daftar para seleb👇:</h2>
+              <div class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                  ${
+                    notFollowingBack.length > 0
+                      ? notFollowingBack
+                          .map(
+                            (username) =>
+                              `<div class="bg-pink-100 text-pink-700 px-2 py-1 rounded">${username}</div>`
+                          )
+                          .join("")
+                      : '<div class="col-span-2 text-center text-gray-500">Aman, kalian saling follow!</div>'
+                  }
+              </div>
+              <p class="text-sm text-gray-700 mt-4">Jumlah orang yang tidak follow balik: <strong>${
+                notFollowingBack.length
+              }</strong> dari <strong>${
+              following.length
+            }</strong> following dan <strong>${
+              followers.length
+            }</strong> followers.</p>
+            `;
+
+            if (notFollowingBack.length > 0) {
+              const downloadBtn = document.createElement("button");
+              downloadBtn.textContent = "Download CSV";
+              downloadBtn.className =
+                "text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mt-4";
+              downloadBtn.addEventListener("click", () => {
+                const csvContent = Papa.unparse(
+                  notFollowingBack.map((user) => ({ username: user }))
+                );
+                const blob = new Blob([csvContent], {
+                  type: "text/csv;charset=utf-8;",
+                });
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "not-following-back.csv";
+                link.click();
+              });
+              resultDiv.appendChild(downloadBtn);
+            }
+          } catch (error) {
+            resultDiv.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            console.error(error);
+          }
         });
     </script>
-</body>
+  </body>
 </html>
