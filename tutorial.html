@@ -482,4 +482,32 @@
       });
     }, observerOptions);
     
-    // Apply animation
+    // Apply animation styles
+    document.querySelectorAll('.step-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      card.style.transitionDelay = `${index * 0.1}s`;
+      observer.observe(card);
+    });
+    
+    // Initialize animations on load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Trigger initial progress update
+      updateProgress();
+      
+      // Add smooth reveal effect to header
+      const header = document.querySelector('header');
+      header.style.opacity = '0';
+      header.style.transform = 'translateY(-20px)';
+      
+      setTimeout(() => {
+        header.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        header.style.opacity = '1';
+        header.style.transform = 'translateY(0)';
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
