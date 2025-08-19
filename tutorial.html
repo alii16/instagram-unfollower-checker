@@ -1,263 +1,513 @@
-<script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.js"></script>
-<link
-  href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css"
-  rel="stylesheet"
-/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial - Instagram Unfollowers Checker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
 
-<body class="bg-gray-100 font-sans min-h-screen">
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center text-gray-600 hover:text-primary-600 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Kembali
+          </a>
+        </div>
+        <div class="text-center">
+          <h1 class="text-2xl font-bold text-gray-900">Tutorial</h1>
+          <p class="text-sm text-gray-600">Cara ekspor data instagram</p>
+        </div>
+        <div class="w-24"></div> <!-- Spacer for centering -->
+      </div>
+    </div>
+  </header>
+
   <!-- Main Content -->
-  <div class="w-full max-w-md mx-auto p-6 mt-12">
-    <div class="bg-white rounded-lg shadow-xl p-6">
-      <!-- Header -->
-      <header class="bg-custom text-white p-6 rounded-t-lg">
-        <div class="flex justify-between items-center">
-          <h1 class="text-3xl text-indigo-700 font-extrabold">
-            Tutorial Export Daftar Follower dan Following Instagram
-          </h1>
-          <img
-            src="img/logo.png"
-            alt="Instagram Logo"
-            class="w-24 h-24 rounded-full"
-          />
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Introduction Card -->
+    <div class="bg-white rounded-lg border border-gray-200 shadow-sm mb-8">
+      <div class="p-6">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold text-gray-900">Ekspor Data Pengikut & Mengikuti Instagram</h2>
+            <p class="text-sm text-gray-600">Ikuti langkah-langkah berikut untuk mengunduh data Instagram Anda</p>
+          </div>
         </div>
-      </header>
-
-      <!-- Deskripsi -->
-      <div class="text-center mb-8 mt-8">
-        <p class="text-lg text-indigo-700 font-semibold">
-          Ikuti langkah-langkah berikut untuk mengekspor daftar follower dan
-          following dari Instagram.
-        </p>
+        
+        <!-- Time estimate -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h3 class="text-sm font-medium text-blue-800">Catatan Penting</h3>
+              <div class="mt-2 text-sm text-blue-700">
+                <p><strong>Waktu Proses:</strong> Instagram mungkin memerlukan waktu hingga <strong>48 jam</strong> untuk menyiapkan file data Anda. Anda akan menerima notifikasi email ketika file tersebut siap untuk diunduh.</p>
+                <p class="mt-1"><strong>File Format:</strong> Pastikan untuk memilih format <strong>JSON</strong> selama proses ekspor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Langkah-langkah dengan Gambar -->
-      <div class="space-y-8">
-        <!-- Langkah 1 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor1.jpg"
-            alt="Langkah 1"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 1: Buka pengaturan di Instagram
-            </h3>
-            <p class="text-gray-700">
-              Buka Instagram lalu klik menu profile kemudian pilih
-              <strong>pengaturan dan aktivitas.</strong>
-            </p>
-          </div>
-        </div>
+    <!-- Progress Steps -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between text-xs text-gray-500 mb-2">
+        <span>Step 1</span>
+        <span>Step 6</span>
+        <span>Step 12</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2">
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300" style="width: 0%" id="progressBar"></div>
+      </div>
+    </div>
 
-        <!-- Langkah 2 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor2.jpg"
-            alt="Langkah 2"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 2: Akses Pusat Akun
-            </h3>
-            <p class="text-gray-700">
-              Setelah masuk di menu pengaturan, pilih
-              <strong>pusat akun</strong> di bagian atas
-            </p>
-          </div>
-        </div>
-
-        <!-- Langkah 3 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor3.jpg"
-            alt="Langkah 3"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 3: Pilih Informasi dan izin Anda
-            </h3>
-          </div>
-        </div>
-
-        <!-- Langkah 4 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor4.jpg"
-            alt="Langkah 4"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 4: Pilih Unduh informasi Anda
-            </h3>
-          </div>
-        </div>
-
-        <!-- Langkah 5 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor5.jpg"
-            alt="Langkah 5"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 5: Pilih Mengunduh atau mentransfer informasi
-            </h3>
-          </div>
-        </div>
-
-        <!-- Langkah 6 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor6.jpg"
-            alt="Langkah 6"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 6: Pilih akun
-            </h3>
-            <p class="text-gray-700">
-              Pilih akun Instagram yang ingin kamu export file follower dan
-              following.
-            </p>
-          </div>
-        </div>
-
-        <!-- Langkah 7 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor7.jpg"
-            alt="Langkah 7"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 7: Pilih Beberapa informasi anda
-            </h3>
-            <p class="text-gray-700">
-              Pilih <strong>Beberapa informasi anda</strong> karena kita hanya
-              memerlukan informasi tentang daftar pengikut dan diikuti.
-            </p>
-          </div>
-        </div>
-
-        <!-- Langkah 8 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor8.jpg"
-            alt="Langkah 8"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 8: Pilih Pengikut dan diikuti
-            </h3>
-          </div>
-        </div>
-
-        <!-- Langkah 9 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor9.jpg"
-            alt="Langkah 9"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 9: Pilih Unduh ke perangkat
-            </h3>
-          </div>
-        </div>
-
-        <!-- Langkah 10 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor10.jpg"
-            alt="Langkah 10"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 10: Isi data
-            </h3>
-            <p class="text-gray-700">
-              Isi formulir seperti disamping, pastikan untuk memilih format JSON
-              dan isi email yang aktif agar ada pemberitahuan ketika file sudah
-              bisa didownload (lalu klik tombol Buat file).
-              <strong>Info!</strong> file dapat didownload paling lambat 2x24
-              jam karena Facebook perlu waktu untuk menyiapkan file.
-            </p>
-          </div>
-        </div>
-
-        <!-- Langkah 11 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor11.png"
-            alt="Langkah 9"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 11: Ekstrak file
-            </h3>
-            <p class="text-gray-700">Ekstrak file setelah file didownload</p>
-          </div>
-        </div>
-
-        <!-- Langkah 12 -->
-        <div class="flex items-center space-x-6">
-          <img
-            src="img/tutor12.png"
-            alt="Langkah 9"
-            class="w-48 h-auto rounded-lg shadow-lg"
-          />
-          <div>
-            <h3 class="font-semibold text-lg text-gray-800">
-              Langkah 12: File followers dan following
-            </h3>
-            <p class="text-gray-700">
-              Setelah file diekstrak, ada 2 file penting
-              <strong>(followers dan following)</strong> yang akan kita gunakan
-              untuk mengecek siapa saja yang tidak follback akun Instagram kita
-            </p>
+    <!-- Tutorial Steps -->
+    <div class="space-y-8">
+      
+      <!-- Step 1 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="1">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">1</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Buka Pengaturan Instagram</h3>
+              <p class="text-gray-700 mb-4">Buka Instagram, klik menu profil Anda, lalu pilih <strong>"Pengaturan dan Aktivitas"</strong>.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor1.jpg" alt="Step 1: Instagram Settings" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 1: Open Instagram Settings')"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Contoh Format Data -->
-      <div class="mt-8">
-        <h3 class="text-xl text-center font-bold text-indigo-700 mb-4">
-          Sekian, senang bisa membantu👋
-        </h3>
+      <!-- Step 2 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="2">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">2</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Akses Pusat Akun</h3>
+              <p class="text-gray-700 mb-4">Setelah masuk ke menu pengaturan, <strong>"Pusat Akun"</strong> pilih di bagian atas.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor2.jpg" alt="Step 2: Account Center" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 2: Access Account Center')"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <a href="index.html" class="flex justify-center">
-        <button
-          type="button"
-          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-        >
-          Kembali ke halaman sebelumnya
-        </button>
-      </a>
-      <!-- Footer -->
-      <footer class="text-gray-900 py-4 mt-10 text-center border-t">
-        <p class="text-sm">
-          Made with 💡 by
-          <a
-            href="https://alii.mra.my.id"
-            class="text-indigo-700 hover:underline"
-            target="_blank"
-            >Ali Polanunu</a
-          >
-        </p>
-        <p class="text-xs">Instagram Unfollowers Checker &copy; 2024</p>
-      </footer>
+      <!-- Step 3 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="3">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">3</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Informasi dan Izin Anda"</h3>
+              <p class="text-gray-700 mb-4">Cari dan klik opsi "Informasi dan Izin Anda".</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor3.jpg" alt="Step 3: Your Information and Permissions" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 3: Your Information and Permissions')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="4">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">4</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Unduh Informasi Anda"</h3>
+              <p class="text-gray-700 mb-4">Klik "Unduh Informasi Anda" untuk mengakses opsi ekspor data.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor4.jpg" alt="Step 4: Download Your Information" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 4: Download Your Information')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="5">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">5</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Unduh atau Transfer Informasi"</h3>
+              <p class="text-gray-700 mb-4">Pilih opsi untuk mengunduh atau mentransfer informasi Anda.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor5.jpg" alt="Step 5: Download or Transfer Information" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 5: Download or Transfer Information')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="6">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">6</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih Akun Anda</h3>
+              <p class="text-gray-700 mb-4">Pilih akun Instagram yang ingin Anda ekspor data pengikut dan mengikuti.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor6.jpg" alt="Step 6: Select Account" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 6: Select Your Account')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="7">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">7</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Beberapa Informasi Anda"</h3>
+              <p class="text-gray-700 mb-4">Pilih <strong>"Beberapa Informasi Anda"</strong> karena kita hanya memerlukan data pengikut dan mengikuti, bukan semua data akun.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor7.jpg" alt="Step 7: Some of Your Information" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 7: Some of Your Information')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="8">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">8</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Pengikut dan Mengikuti"</h3>
+              <p class="text-gray-700 mb-4">Centang opsi "Pengikut dan Mengikuti" untuk mengekspor data spesifik ini.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor8.jpg" alt="Step 8: Followers and Following" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 8: Select Followers and Following')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 9 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="9">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">9</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pilih "Unduh ke Perangkat"</h3>
+              <p class="text-gray-700 mb-4">Pilih opsi untuk mengunduh data langsung ke perangkat Anda.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor9.jpg" alt="Step 9: Download to Device" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 9: Download to Device')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 10 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="10">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">10</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Isi Formulir</h3>
+              <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-yellow-800">Pengaturan Penting</h3>
+                    <div class="mt-2 text-sm text-yellow-700">
+                      <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Format:</strong> Pilih <strong>JSON</strong> (bukan HTML)</li>
+                        <li><strong>Email:</strong> Masukkan email aktif untuk notifikasi unduhan</li>
+                        <li><strong>Waktu Proses:</strong> Hingga 48 jam</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4">Lengkapi formulir sesuai preferensi Anda lalu klik "Buat File".</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor10.jpg" alt="Step 10: Fill Form" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 10: Fill Out the Form')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 11 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="11">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-semibold">11</div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Ekstrak File yang Diunduh</h3>
+              <p class="text-gray-700 mb-4">Setelah Anda menerima email notifikasi unduhan, ekstrak file ZIP untuk mengakses data Anda.</p>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <img src="img/tutor11.png" alt="Step 11: Extract File" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 11: Extract the Downloaded File')"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 12 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden step-card" data-step="12">
+        <div class="p-6">
+          <div class="flex items-start space-x-6">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Temukan File Anda</h3>
+              <p class="text-gray-700 mb-4">Setelah diekstrak, Anda akan menemukan dua file penting: <strong>"followers.json"</strong> and <strong>"following.json"</strong>. File inilah yang akan Anda unggah ke pemeriksa unfollowers kami.</p>
+              <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                <img src="img/tutor12.png" alt="Step 12: Files Location" class="w-full max-w-sm mx-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer" onclick="openImageModal(this.src, 'Step 12: Locate Your Files')"/>
+              </div>
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-green-800">Congratulations! 🎉</h3>
+                    <div class="mt-2 text-sm text-green-700">
+                      <p>You now have your Instagram data ready. You can use these files with our unfollowers checker to find out who doesn't follow you back!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-12 text-center">
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Check Your Unfollowers?</h3>
+        <p class="text-gray-600 mb-6">Now that you have your files, let's analyze your Instagram relationships!</p>
+        <a href="index.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all transform hover:scale-105">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          Start Analyzing Now
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
+      <div class="mt-3">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-medium text-gray-900" id="modalTitle"></h3>
+          <button onclick="closeImageModal()" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="text-center">
+          <img id="modalImage" src="" alt="" class="max-w-full h-auto rounded-lg shadow-lg mx-auto">
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 mt-16">
+    <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm text-gray-500">
+          Made with ❤️ by 
+          <a href="https://alii.mra.my.id" class="text-primary-600 hover:text-primary-500 font-medium" target="_blank">Ali Polanunu</a>
+        </p>
+        <p class="text-xs text-gray-400 mt-1">Instagram Unfollowers Checker © 2024</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Progress bar animation
+    function updateProgress() {
+      const cards = document.querySelectorAll('.step-card');
+      const progressBar = document.getElementById('progressBar');
+      let visibleCards = 0;
+      
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          visibleCards = index + 1;
+        }
+      });
+      
+      const progress = (visibleCards / cards.length) * 100;
+      progressBar.style.width = progress + '%';
+    }
+    
+    // Image modal functions
+    function openImageModal(src, title) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('imageModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeImageModal();
+      }
+    });
+    
+    // Keyboard navigation for modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
+      }
+    });
+    
+    // Scroll event listeners
+    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('load', updateProgress);
+    
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Add entrance animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Apply animation styles
+    document.querySelectorAll('.step-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      card.style.transitionDelay = `${index * 0.1}s`;
+      observer.observe(card);
+    });
+    
+    // Initialize animations on load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Trigger initial progress update
+      updateProgress();
+      
+      // Add smooth reveal effect to header
+      const header = document.querySelector('header');
+      header.style.opacity = '0';
+      header.style.transform = 'translateY(-20px)';
+      
+      setTimeout(() => {
+        header.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        header.style.opacity = '1';
+        header.style.transform = 'translateY(0)';
+      }, 100);
+    });
+  </script>
+
 </body>
+</html>
